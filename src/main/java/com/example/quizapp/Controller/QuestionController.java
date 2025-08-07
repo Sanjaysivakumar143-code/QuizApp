@@ -28,6 +28,10 @@ public class QuestionController {
     public List<Question> getQuestionByCategory(@PathVariable String category){
         return questionService.getQuestionsByCategory(category);
     }
+    @GetMapping ("difficultyLevel/{difficultyLevel}")
+    public List<Question> getQuestionByDifficultyLevel(@PathVariable String difficultyLevel){
+        return questionService.getQuestionsByDifficultyLevel(difficultyLevel) ;
+    }
     @PostMapping("add")
     public void addQuestion(@RequestBody Question question){
         questionService.addQuestions(question);

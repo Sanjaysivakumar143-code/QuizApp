@@ -12,6 +12,8 @@ import com.example.quizapp.Model.Question;
 public interface QuestionDao extends JpaRepository<Question, Integer> {
     List<Question> findByCategory(String category);
 
+    List<Question> findByDifficultyLevel(String difficultyLevel);
+
     @Query(value="SELECT * FROM question q where q.category = :category ORDER BY RAND() LIMIT :numQ", nativeQuery= true)
     List<Question> findRandomQuestionsByCategory(String category, int numQ);
 }
