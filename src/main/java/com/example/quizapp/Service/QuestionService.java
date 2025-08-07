@@ -22,4 +22,7 @@ public class QuestionService {
     public void addQuestions(Question question){
         questionDao.save(question);
     }
+    public List<Question> getQuestionsByDifficultyLevel(String difficultyLevel) {
+        return questionDao.findByDifficultyLevel(difficultyLevel);
+    }
 }
